@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$primary: #5ab9b9;
+$title-font: 'Akshar', sans-serif;
+
+body{
+    min-height: 100vh;
+    background: $primary;
+    display: grid;
+    place-items: center;
+    font-family: 'K2D', sans-serif;
+}
+
+.grid-3{
+    display: grid;
+    grid-template-columns: 45% 35% 20%;
+    justify-content: space-between;
+}
+
+.deleting{animation: deleting 0.5s 1 forwards;}
+
+// Design of table
+table{
+    border-spacing: 0;
+    max-width: 1300px;
+    color: white;
+    background: #2c3844;
+
+    tr{
+        $line: #2129319a;
+        &:nth-child(2n):not(.footer, .title){background: #242e38;}
+        &.title,&.footer{background: #202832;}
+
+        th{
+            box-shadow: 0 0 1px #00000025;
+            padding: 10px 0;
+            font-family: $title-font;
+            
+            &:not(:first-of-type){border-left: 3px solid $line;}
+        }
+
+        td{
+            padding: 10px 25px;
+            box-shadow: 0 0 1px #00000025;
+
+            &:not(:first-of-type){
+                display: flex;
+                justify-content: center;
+                border-left: 3px solid $line;
+            }
+        }
+
+        button{
+            padding: 10px 25px;
+            background: $primary;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        a{
+            color: white;
+            transition: .5s;
+
+            &:hover{
+                color: #ffffff50;
+            }
+        }
+    }
+}
+
+// Deleting animation
+@keyframes deleting{
+    0%{
+        opacity: 1;
+    }
+
+    75%{
+        opacity: 0;
+        transform: scale(.9);
+        height: 55px;
+    }
+
+    100%{
+        height: 0px;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,27 @@
+[
+    {
+        "id": "0",
+        "name": "John Doe",
+        "mail": "doejohn@gmail.com"
+    },
+    {
+        "id": "1",
+        "name": "Steven Osborn",
+        "mail": "osborn@hotmail.ru"
+    },
+    {
+        "id": "2",
+        "name": "Mary Parker",
+        "mail": "mparker@hotmail.ru"
+    },
+    {
+        "id": "3",
+        "name": "Eddie Brock",
+        "mail": "info@eddie.brock"
+    },
+    {
+        "id": "4",
+        "name": "Henry Cavil",
+        "mail": "henrycavill05@gmail.com"
+    }
+]
