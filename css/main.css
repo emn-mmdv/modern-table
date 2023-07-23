@@ -14,6 +14,21 @@ body {
   font-family: "K2D", sans-serif;
 }
 
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 50px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 30px;
+}
+
 .grid-3 {
   display: grid;
   grid-template-columns: 45% 35% 20%;
@@ -21,7 +36,75 @@ body {
 }
 
 .deleting {
-  animation: deleting 0.5s 1 forwards;
+  -webkit-animation: deleting 0.5s 1 forwards;
+          animation: deleting 0.5s 1 forwards;
+}
+
+form {
+  flex: auto;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.2823529412);
+  position: relative;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2666666667);
+  min-width: 300px;
+  max-height: 400px;
+}
+form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url(https://images.immediate.co.uk/production/volatile/sites/4/2021/08/mountains-7ddde89.jpg?resize=768,574);
+  background-size: cover;
+}
+form .content {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
+  gap: 20px;
+  width: 60%;
+}
+form .content h1 {
+  text-align: center;
+  font-family: "Akshar", sans-serif;
+}
+form .content .inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+form .content .inputs input {
+  width: 100%;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1254901961);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: none;
+  color: black;
+  transition: 0.3s;
+}
+form .content .inputs input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.631372549);
+}
+form .content .inputs input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.631372549);
+}
+form .content .inputs input::placeholder {
+  color: rgba(0, 0, 0, 0.631372549);
+}
+form .content .inputs input:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1254901961);
+}
+form .content .inputs button {
+  padding: 15px 40px;
+  margin-top: 20px;
+  background: #5ab9b9;
+  border: none;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 table {
@@ -29,6 +112,7 @@ table {
   max-width: 1300px;
   color: white;
   background: #2c3844;
+  flex: auto;
 }
 table tr:nth-child(2n):not(.footer, .title) {
   background: #242e38;
@@ -66,6 +150,21 @@ table tr a {
 }
 table tr a:hover {
   color: rgba(255, 255, 255, 0.3137254902);
+}
+
+@-webkit-keyframes deleting {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+    transform: scale(0.9);
+    height: 55px;
+  }
+  100% {
+    height: 0px;
+    opacity: 0;
+  }
 }
 
 @keyframes deleting {

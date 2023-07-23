@@ -49,3 +49,29 @@ function delete_row(x) {
         }
     }, 500)
 }
+
+// Adding a data
+function add_data(){
+    // Data
+    data = {
+        "name": document.querySelector('#name').value,
+        "mail": document.querySelector('#mail').value
+    }
+
+    // Condition for empty input
+    if(data.name.length > 0 && data.mail.length > 0){
+        // Push new data
+        td.push(data)
+        // Update Table
+        table_update()
+
+        document.querySelector('#name').value = ''
+        document.querySelector('#mail').value = ''
+    }
+}
+
+function keypress(){
+    if(event.key === "Enter"){
+        add_data()
+    }
+}

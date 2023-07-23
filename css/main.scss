@@ -18,6 +18,21 @@ body{
     font-family: 'K2D', sans-serif;
 }
 
+// Layout
+.container{
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    padding: 50px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 30px;
+}
+
 .grid-3{
     display: grid;
     grid-template-columns: 45% 35% 20%;
@@ -26,12 +41,82 @@ body{
 
 .deleting{animation: deleting 0.5s 1 forwards;}
 
+// Design of form
+form{
+    flex: auto;
+    display: grid;
+    place-items: center;
+    background: #00000048;
+    position: relative;
+    box-shadow: 2px 2px 3px #00000044;
+    min-width: 300px;
+    max-height: 400px;
+
+    &::before{
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image: url(https://images.immediate.co.uk/production/volatile/sites/4/2021/08/mountains-7ddde89.jpg?resize=768,574) ;
+        background-size: cover;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        padding: 40px 0;
+        gap: 20px;
+        width: 60%;
+
+        h1{
+            text-align: center;
+            font-family: $title-font;
+        }
+
+        .inputs{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            input{
+                width: 100%;
+                padding: 10px 20px;
+                background: #ffffff20;
+                backdrop-filter: blur(10px);
+                border: none;
+                color: black;
+                transition: 0.3s;
+
+                &::placeholder{
+                    color: #000000a1;
+                }
+
+                &:focus{
+                    outline: none;
+                    box-shadow: 0px 0px 10px #ffffff20;
+                }
+            }
+
+            button{
+                padding: 15px 40px;
+                margin-top: 20px;
+                background: $primary; 
+                border: none;
+                font-weight: bolder;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 // Design of table
 table{
     border-spacing: 0;
     max-width: 1300px;
     color: white;
     background: #2c3844;
+    flex: auto;
 
     tr{
         $line: #2129319a;
