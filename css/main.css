@@ -113,6 +113,7 @@ table {
   color: white;
   background: #2c3844;
   flex: auto;
+  overflow-x: auto;
 }
 table tr:nth-child(2n):not(.footer, .title) {
   background: #242e38;
