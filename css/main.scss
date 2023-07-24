@@ -145,6 +145,7 @@ table{
 
         button{
             padding: 10px 25px;
+            margin: 0 15px;
             background: $primary;
             border: none;
             color: white;
@@ -179,3 +180,15 @@ table{
         opacity: 0;
     }
 }
+
+@media screen and (max-width: 1000px) {
+    .container{
+        padding: 50px 15px;
+
+        .row{
+            flex-direction: column;
+        }
+    }
+}
+
+@media screen and (max-width: 400px){form{min-width: none !important;}}
